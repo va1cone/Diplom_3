@@ -27,6 +27,7 @@ button_place_an_order = "//button[@class='button_button__33qZ0 button_button_typ
 text_your_order_has_begun_to_be_prepared = "//p[@class='undefined text text_type_main-small mb-2'  and text() = 'Ваш заказ начали готовить' ]" #
 the_first_order_on_the_list = "(//li[@class='OrderHistory_listItem__2x95r mb-6'])[1]" #самый первый заказ в списке
 order_modal_window = "//div[@class='Modal_orderBox__1xWdi Modal_modal__contentBox__sCy8X p-10']" #модальное окно заказа
+cross_orders = "//button[@class='Modal_modal__close_modified__3V5XS Modal_modal__close__TnseK' and @type='button']" #крестик на модалке созданного заказа
 
 #Личный кабинет
 history_orders_button = "//a[text() = 'История заказов']" #кнопка история заказов

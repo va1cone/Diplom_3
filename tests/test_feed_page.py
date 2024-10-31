@@ -8,8 +8,8 @@ from conftest import *
 from data import *
 from locators import *
 
-class TestProfilePage:
-    def test_the_transition_by_clicking_on_personal_account(self, driver):
+class TestFeedPage:
+    def test_that_the_order_modal_window_is_visible(self, driver):
         authorization_page = AuthorizationPage(driver)
         authorization_page.opening_the_authorization_page()
         authorization_page.entering_email_in_the_login_form(test_email)
@@ -36,5 +36,7 @@ class TestProfilePage:
         home_page = HomePage(driver)
         home_page.move_bun()
         home_page.click_place_an_order()
-        home_page.click_on_the_feed_orders()
+        home_page.checking_text_your_order_has_begun_to_be_prepared_is_visible()
+        home_page.click_cross_orders()
+        #home_page.click_on_the_feed_orders()
 

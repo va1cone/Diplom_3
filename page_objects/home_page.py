@@ -16,6 +16,7 @@ class HomePage(BasePage):
         self.pink_bun = (By.XPATH, pink_bun)
         self.window_with_details = (By.XPATH, window_with_details)
         self.cross = (By.XPATH, cross)
+        self.cross_orders = (By.XPATH, cross_orders)
         self.place_to_move_the_bun = (By.XPATH, place_to_move_the_bun)
         self.cost_of_two_buns = (By.XPATH, cost_of_two_buns)
         self.button_place_an_order = (By.XPATH, button_place_an_order)
@@ -66,5 +67,8 @@ class HomePage(BasePage):
 
     def checking_text_your_order_has_begun_to_be_prepared_is_visible(self):
         self.wait_until_visible(*self.text_your_order_has_begun_to_be_prepared)
+
+    def click_cross_orders(self):
+        self.click(*self.cross_orders)
 
 
