@@ -15,18 +15,22 @@ class RegistrationPage(BasePage):
         self.registration_password_entry_field = (By.XPATH, registration_password_entry_field)
         self.register_button = (By.XPATH, register_button)
 
-    @allure.step("Открытие главной страницы")
+    @allure.step("Открытие страницы регистрации")
     def opening_the_registration_url (self):
         self.open_page(self.registration_url )
 
+    @allure.step("Ввод почты")
     def entering_email_in_the_login_form(self, email: str):
         self.send_keys(*self.registration_email_entry_field, email)
 
+    @allure.step("Ввод имени")
     def entering_name_in_the_login_form(self, name: str):
         self.send_keys(*self.registration_name_entry_field, name)
 
+    @allure.step("Ввод пароля")
     def entering_password_in_the_login_form(self, password: str):
         self.send_keys(*self.registration_password_entry_field, password)
 
+    @allure.step("Клик на кнопку регистрации")
     def click_on_the_register_button(self):
         self.click(*self.register_button)

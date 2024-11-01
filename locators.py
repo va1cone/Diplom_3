@@ -28,10 +28,19 @@ text_your_order_has_begun_to_be_prepared = "//p[@class='undefined text text_type
 the_first_order_on_the_list = "(//li[@class='OrderHistory_listItem__2x95r mb-6'])[1]" #самый первый заказ в списке
 order_modal_window = "//div[@class='Modal_orderBox__1xWdi Modal_modal__contentBox__sCy8X p-10']" #модальное окно заказа
 cross_orders = "//button[@class='Modal_modal__close_modified__3V5XS Modal_modal__close__TnseK' and @type='button']" #крестик на модалке созданного заказа
+order_number_on_the_order_modal_window = "//h2[@class='Modal_modal__title_shadow__3ikwq Modal_modal__title__2L34m text text_type_digits-large mb-8']" #номер заказа на модальном окне заказа
+order_number_in_order_history = "//p[@class='text text_type_digits-default']" #
 
 #Личный кабинет
 history_orders_button = "//a[text() = 'История заказов']" #кнопка история заказов
 exit_button = "//button[text()='Выход']"  #кнопка выход в личном кабинете
+
+#Лента заказов
+order_number_in_the_order_feed = "(//p[@class='text text_type_digits-default'])[1]" #номер заказа в ленте заказов
+completed_for_all_time = "(//p[@class='OrderFeed_number__2MbrQ text text_type_digits-large'])[1]" #выполнено за все время
+completed_today = "(//p[@class='OrderFeed_number__2MbrQ text text_type_digits-large'])[2]" #выполнено за сегодня
+order_number_in_progress_1 = "(//li[@class='text text_type_digits-default mb-2'])[6]"
+order_number_in_progress_2 = "(//li[@class='text text_type_digits-default mb-2'])[7]"
 
 
 

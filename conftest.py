@@ -1,5 +1,5 @@
 import pytest
-from helpers import WebdriverFactory  # Убедитесь, что вы импортируете WebdriverFactory
+from helpers import WebdriverFactory
 
 @pytest.fixture(params=["chrome", "firefox"])
 def driver(request):
@@ -7,11 +7,3 @@ def driver(request):
     driver = WebdriverFactory.getWebdriver(browser)
     yield driver
     driver.quit()
-
-#class WebdriverFactory:
-    #@staticmethod
-    #def getWebdriver(browserName):
-        #if browserName == "firefox":
-            #return webdriver.firefox
-        #elif browserName == "chrome":
-            #return webdriver.chrome

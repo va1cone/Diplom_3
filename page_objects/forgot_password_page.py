@@ -19,35 +19,44 @@ class ForgotPasswordPage(BasePage):
         self.eye_button = (By.XPATH, eye_button)
         self.password_recovery_input_field_hidden = (By.XPATH, password_recovery_input_field_hidden)
 
-    @allure.step("Открытие главной страницы")
+    @allure.step("Открытие страницы авторизации")
     def opening_the_login_page(self):
         self.open_page(self.login_url)
 
+    @allure.step("Клик на кнопку 'восстановить пароль'")
     def click_on_the_reset_password_button(self):
         self.click(*self.recover_password_button)
 
+    @allure.step("Проверка на то, что текущий урл - https://stellarburgers.nomoreparties.site/forgot-password")
     def assert_forgot_password_url(self):
         self.assert_current_url(self.forgot_password_url)
 
+    @allure.step("Ввод почты в форму восстановления пароля")
     def entering_email_in_the_password_recovery_form(self, email: str):
         self.send_keys(*self.password_recovery_input_field, email)
 
+    @allure.step("Ввод пароля в форму восстановления пароля")
     def click_on_the_reset_password_button_on_the_recovery_page(self):
         self.click(*self.reset_password_button_on_the_recovery_page)
 
+    @allure.step("Проверка на то, что текущий урл https://stellarburgers.nomoreparties.site/reset-password")
     def assert_reset_password_url(self):
         self.wait_for_url(self.reset_password_url)
         self.assert_current_url(self.reset_password_url)
 
+    @allure.step("Ввод пароля")
     def entering_password_in_the_password_recovery(self, password: str):
         self.send_keys(*self.entering_password_in_the_password_recovery_form, password)
 
+    @allure.step("Клик на кнопку с глазом")
     def click_on_the_eye_button(self):
         self.long_press(*self.eye_button, 1)
 
+    @allure.step("Проверка на то, что пароль виден")
     def checking_that_the_hidden_password_is_visible(self):
         self.wait_until_visible(*self.password_recovery_input_field_hidden)
 
+    @allure.step("Проверка на то, что форма подсвечивается")
     def checking_that_the_recovery_form_is_active(self):
         self.wait_until_visible(*self.active_password_entry_field_window_in_the_password_recovery_form)
 

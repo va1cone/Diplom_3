@@ -15,5 +15,5 @@ class WebdriverFactory:
             service = ChromeService(ChromeDriverManager().install())
             driver = webdriver.Chrome(service=service)
 
-        driver.maximize_window()  # Открыть окно на полный экран
+        driver.maximize_window()
         return driver

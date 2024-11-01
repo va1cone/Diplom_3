@@ -3,6 +3,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.by import By
+import time
 
 class BasePage:
     def __init__(self, driver: WebDriver):
@@ -22,16 +23,6 @@ class BasePage:
 
     def open_page(self, url: str):
         self.driver.get(url)
-
-    def switch_to_window(self, index: int):
-        self.driver.switch_to.window(self.driver.window_handles[index])
-
-    def execute_script(self, script: str, *args):
-        self.driver.execute_script(script, *args)
-
-    def scroll_to_element(self, by: By, value: str):
-        element = self.wait_until_visible(by, value)
-        self.execute_script("arguments[0].scrollIntoView(true);", element)
 
     def assert_current_url(self, expected_url: str):
         assert self.driver.current_url == expected_url
@@ -56,3 +47,12 @@ class BasePage:
 
         actions = ActionChains(self.driver)
         actions.click_and_hold(bun_source).move_to_element(bun_target).release().perform()
+
+    def wait_sleep(self, seconds: int):
+        time.sleep(seconds)
+
+    def get_number(self, by: By, value: str) -> int:
+        element = self.wait.until(expected_conditions.visibility_of_element_located((by, value)))
+        number = element.text
+        return int(number.replace('#', ''))
+
