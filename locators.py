@@ -39,8 +39,7 @@ exit_button = "//button[text()='Выход']"  #кнопка выход в ли�
 order_number_in_the_order_feed = "(//p[@class='text text_type_digits-default'])[1]" #номер заказа в ленте заказов
 completed_for_all_time = "(//p[@class='OrderFeed_number__2MbrQ text text_type_digits-large'])[1]" #выполнено за все время
 completed_today = "(//p[@class='OrderFeed_number__2MbrQ text text_type_digits-large'])[2]" #выполнено за сегодня
-order_number_in_progress_1 = "(//li[@class='text text_type_digits-default mb-2'])[6]"
-order_number_in_progress_2 = "(//li[@class='text text_type_digits-default mb-2'])[7]"
+order_number_in_progress_1 = "(//li[@class='text text_type_digits-default mb-2'])[6]" #заказ в работе
 
 
 
